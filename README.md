@@ -45,44 +45,6 @@ A aplicação é dividida em dois componentes principais (Servidor e Cliente) qu
 - **Comunicação Distribuída:** Java RMI (`java.rmi.*`)
 - **Gerenciamento de Dependências / Build:** Maven (ou Gradle)
 
----
-
-## 🚀 Como Executar o Projeto
-
-### Pré-requisitos
-- **Java Development Kit (JDK 17 ou superior)** instalado.
-- Dispositivos conectados na mesma rede local (caso vá testar em computadores diferentes).
-
----
-
-### Passo 1: Executar o Servidor (`Main.java`)
-
-1. Abasteça a classe principal do servidor.
-2. Informe o **IP da máquina do servidor na rede local** quando solicitado (ou aperte `Enter` para usar `localhost`).
-3. O serviço será registrado na porta **1099**.
-
-> ⚠️ **Nota:** Certifique-se de que a porta `1099` esteja liberada no Firewall do sistema operacional na máquina que executará o servidor.
-
----
-
-### Passo 2: Executar os Clientes (`ClientMain.java`)
-
-Em cada computador participante (ou em múltiplos terminais no mesmo computador):
-
-1. Execute a classe `ClientMain`.
-2. Digite o **IP do servidor** (ex: `192.168.1.15` ou apenas aperte `Enter` se estiver rodando em `localhost`).
-3. Digite o seu **nome de usuário**.
-4. Pronto! A partir deste momento você estará conectado à sala e poderá enviar e receber mensagens em tempo real.
-
----
-
-## 💬 Comandos Disponíveis no Chat
-
-- **Digitar mensagem:** Envia o texto digitado para todos os membros conectados.
-- **`sair`:** Desconecta seu usuário da sala e encerra a aplicação com segurança.
-
----
-
 ## 📂 Estrutura do Código
 
 ```text
