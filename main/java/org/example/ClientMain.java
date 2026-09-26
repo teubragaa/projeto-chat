@@ -9,18 +9,22 @@ public class ClientMain {
         try {
             Scanner scanner = new Scanner(System.in);
 
+            // 1. Pergunta o IP do servidor em vez de usar "localhost" fixo
+            System.out.print("Digite o IP do servidor (aperte Enter para 'localhost'): ");
+            String host = scanner.nextLine().trim();
+            if (host.isEmpty()) {
+                host = "localhost";
+            }
+
             System.out.print("Digite seu nome de usuário: ");
             String username = scanner.nextLine().trim();
 
-
-            Registry registry = LocateRegistry.getRegistry("localhost", 1099);
-
+            // 2. Conecta ao registro RMI no IP fornecido
+            Registry registry = LocateRegistry.getRegistry(host, 1099);
 
             ChatServerInterface chatServer = (ChatServerInterface) registry.lookup("ChatService");
 
-
             ChatClientImpl clientCallback = new ChatClientImpl(username);
-
 
             chatServer.registerClient(username, clientCallback);
 
